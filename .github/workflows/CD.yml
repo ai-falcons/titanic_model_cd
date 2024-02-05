@@ -21,8 +21,10 @@ jobs:
     
       #- name: Delete Old Docker Container
        # run: docker rm -f titanic-fastapi-container || true
+      
     
       - name: Run Docker Container
         env: 
           DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-        run: docker run -it -d -p 8001:8001 --name titanic-fastapi-container $env.DOCKER_USER/titanic-fastapi:latest
+        #run: docker run -it -d -p 8001:8001 --name titanic-fastapi-container $env.DOCKER_USER/titanic-fastapi:latest
+        run: docker run -it -d -p 8001:8001 --name titanic-fastapi-container durgeshshisode1988/titanic-fastapi:latest
